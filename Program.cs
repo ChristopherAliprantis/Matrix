@@ -12,7 +12,7 @@ public class NumMatrix : object
 		rows = row;
 		columns = col;
 
-		for (int i = 1; i <= rows; i++)   
+		for (int i = 1; i <= rows; i++)  
 		{
 			double[] temp1;
 			List<double> temp2 = new();
