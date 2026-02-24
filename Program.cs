@@ -133,7 +133,16 @@ public class NumMatrix : object
 		return Scaled;
 
 	}
-	public static NumMatrix ScaleD(NumMatrix ob, double scale)
+
+    public string Ssize
+    {
+        get
+        {
+            return $"{rows}x{columns}";
+        }
+
+    }
+    public static NumMatrix ScaleD(NumMatrix ob, double scale)
 	{
 		NumMatrix Scaled = new(ob.rows, ob.columns);
 		for (int i = 1; i <= Scaled.rows; i++)
@@ -201,7 +210,17 @@ public class StringMatrix : object
         }
 
     }
-    public class SizeException : Exception
+	public string Ssize
+	{
+		get
+		{
+			return $"{rows}x{columns}";
+        }
+	
+	}
+
+
+	public class SizeException : Exception
     {
         public SizeException(string message) : base(message) { }
     }
