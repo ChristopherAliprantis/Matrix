@@ -12,7 +12,11 @@ public class NumMatrix : object
     public static NumMatrix operator -(NumMatrix a, NumMatrix b) => MSub(a, b);
     public static NumMatrix operator *(NumMatrix a, double b) => ScaleM(a, b);
     public static NumMatrix operator -(NumMatrix a, double b) => ScaleS(a, b);
-	public static NumMatrix operator /(NumMatrix a, double b) => ScaleD(a, b); 
+	public static NumMatrix operator /(NumMatrix a, double b) => ScaleD(a, b);
+    public static NumMatrix operator +(double b, NumMatrix b) => ScaleA(a, b);
+    public static NumMatrix operator *(double b, NumMatrix a) => ScaleM(a, b);
+    public static NumMatrix operator -(double b, NumMatrix a) => ScaleS(a, b);
+    public static NumMatrix operator /(double b, NumMatrix a) => ScaleD(a, b);
     public NumMatrix(int row, int col)
 	{
 		rows = row;
