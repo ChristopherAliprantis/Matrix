@@ -7,7 +7,13 @@ public class NumMatrix : object
 	public readonly List<double[]> Rows = new();
 	public int rows;
 	public int columns;
-	public NumMatrix(int row, int col)
+    public static NumMatrix operator +(NumMatrix a, NumMatrix b) => MAdd(a, b);
+    public static NumMatrix operator +(NumMatrix a, double b) => ScaleA(a, b);
+    public static NumMatrix operator -(NumMatrix a, NumMatrix b) => MSub(a, b);
+    public static NumMatrix operator *(NumMatrix a, double b) => ScaleM(a, b);
+    public static NumMatrix operator -(NumMatrix a, double b) => ScaleS(a, b);
+	public static NumMatrix operator /(NumMatrix a, double b) => ScaleD(a, b); 
+    public NumMatrix(int row, int col)
 	{
 		rows = row;
 		columns = col;
