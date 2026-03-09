@@ -62,6 +62,33 @@ public class NumMatrix : object
 
 	}
 
+	public NumMatrix MClear
+	{
+		get
+		{
+			NumMatrix th = (NumMatrix)this.MemberwiseClone();
+            for (int i = 0; i <= th.Rows.Count; i++)
+            {
+                for (int j = 0; j < th.columns; j++)
+                {
+                    th.Rows[i][j] = 0;
+                }
+            }
+			return th;
+        }
+	}
+
+	public void Clear()
+	{
+		for (int i = 0; i <= Rows.Count; i++)
+		{
+			for (int j = 0; j < columns; j++)
+			{
+				Rows[i][j] = 0;
+			}
+		}
+	}
+
 	public static NumMatrix MAdd(NumMatrix a, NumMatrix b)
 	{
 		if (a.rows == b.rows)
@@ -229,8 +256,34 @@ public class StringMatrix : object
 	
 	}
 
+    public StringMatrix MClear
+    {
+        get
+        {
+            StringMatrix th = (StringMatrix)this.MemberwiseClone();
+            for (int i = 0; i <= th.Rows.Count; i++)
+            {
+                for (int j = 0; j < th.columns; j++)
+                {
+                    th.Rows[i][j] = "";
+                }
+            }
+            return th;
+        }
+    }
 
-	public class SizeException : Exception
+    public void Clear()
+    {
+        for (int i = 0; i <= Rows.Count; i++)
+        {
+            for (int j = 0; j < columns; j++)
+            {
+                Rows[i][j] = "";
+            }
+        }
+    }
+
+    public class SizeException : Exception
     {
         public SizeException(string message) : base(message) { }
     }
