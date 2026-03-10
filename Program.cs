@@ -64,32 +64,32 @@ public class NumMatrix : object
 
 	public NumMatrix MClear
 	{
-		get
-		{
-			NumMatrix th = (NumMatrix)this.MemberwiseClone();
-            for (int i = 0; i <= th.Rows.Count; i++)
+        get
+        {
+            NumMatrix th = (NumMatrix)this.MemberwiseClone();
+            for (int i = 1; i <= th.rows + 1; i++)
             {
-                for (int j = 0; j < th.columns; j++)
+                for (int j = 1; j < th.columns + 1; j++)
                 {
                     th.Rows[i][j] = 0;
                 }
             }
-			return th;
+            return th;
         }
-	}
+    }
 
-	public void Clear()
-	{
-		for (int i = 0; i <= Rows.Count; i++)
-		{
-			for (int j = 0; j < columns; j++)
-			{
-				Rows[i][j] = 0;
-			}
-		}
-	}
+    public void Clear()
+    {
+        for (int i = 1; i <= rows + 1; i++)
+        {
+            for (int j = 1; j < columns + 1; j++)
+            {
+                Rows[i][j] = 0;
+            }
+        }
+    }
 
-	public static NumMatrix MAdd(NumMatrix a, NumMatrix b)
+    public static NumMatrix MAdd(NumMatrix a, NumMatrix b)
 	{
 		if (a.rows == b.rows)
 		{
@@ -261,9 +261,9 @@ public class StringMatrix : object
         get
         {
             StringMatrix th = (StringMatrix)this.MemberwiseClone();
-            for (int i = 0; i <= th.Rows.Count; i++)
+            for (int i = 1; i <= th.rows + 1; i++)
             {
-                for (int j = 0; j < th.columns; j++)
+                for (int j = 1; j < th.columns + 1; j++)
                 {
                     th.Rows[i][j] = "";
                 }
@@ -274,9 +274,9 @@ public class StringMatrix : object
 
     public void Clear()
     {
-        for (int i = 0; i <= Rows.Count; i++)
+        for (int i = 1; i <= rows + 1; i++)
         {
-            for (int j = 0; j < columns; j++)
+            for (int j = 1; j < columns + 1; j++)
             {
                 Rows[i][j] = "";
             }
